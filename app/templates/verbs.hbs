@@ -1,0 +1,19 @@
+<h1>Verbs</h1>
+<div class="well">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Verb</th>
+                <th>Definition</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each model as |verb|}}
+                <tr>
+                    <th>{{verb.term}}</th>
+                    <td>{{verb.definition}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
