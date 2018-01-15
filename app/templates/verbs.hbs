@@ -1,14 +1,18 @@
 <h1>Verbs</h1>
 <div class="well">
+    <div class="form-horizontal">
+        {{input class="input" type="text" placeholder="Search"}}
+        <button class="btn btn-primary">Add Term</button> 
+    </div>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>Verb</th>
-                <th>Definition</th>
+                <th class="clickable" {{action 'changeSort' 'term'}}>Verb</th>
+                <th class="clickable" {{action 'changeSort' 'definition'}}>Definition</th>
             </tr>
         </thead>
         <tbody>
-            {{#each model as |verb|}}
+            {{#each sortedTerm as |verb|}}
                 <tr>
                     <th>{{verb.term}}</th>
                     <td>{{verb.definition}}</td>
