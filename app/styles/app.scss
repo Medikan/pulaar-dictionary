@@ -3,7 +3,30 @@
 body {
     padding-top: 20px;
 }
-
 .clickable {
     cursor: pointer;
+}
+.term-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+
+    .term-item {
+
+    }
+}
+.term-btn-wrapper {
+    float:right;
+    
+    .term-btn {
+        margin: 0px 5px;
+    }
+}
+.add-term-wrapper{
+    display:flex;
+    justify-content: flex-start;
+
+    .add-term-item {
+        padding: 0px 5px;
+    }
 }

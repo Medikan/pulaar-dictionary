@@ -1,15 +1,30 @@
 import Controller from '@ember/controller';
 import { sort } from '@ember/object/computed';
+import { observer } from '@ember/object';
 
 export default Controller.extend({
 
     //TODO: add indicator to show current column sort thingy
-    //TODO: search logic (observer to make only matching results appear)
     //TODO: FIGURE OUT CLEANER WAY TO SHOW VERBS!!! Draw is taking too much time
+    //TODO: Throw loader on
+    //Add add/edit/delete button (CRUD interface FTW!)
     
     sortProps: ['searchableTerm:asc'],
 
     sortedTerm: sort('model', 'sortProps'),
+
+    searchTerm: '',
+
+    searchTermChanged: observer('searchTerm', function () {
+        this.get('model').forEach((term) => {
+            if (term.get('searchableTerm').indexOf(this.searchTerm) >= 0 || term.get('definition').indexOf(this.searchTerm) >= 0) {
+                term.set('isHidden', '');
+            }
+            else {
+                term.set('isHidden', 'hidden');
+            }
+        });
+    }),
 
     actions: {
 

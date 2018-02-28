@@ -5,6 +5,7 @@ export default DS.Model.extend({
 
     term:DS.attr("string"),
     definition:DS.attr("string"),
+    tags:DS.attr("string"),
 
     searchableTerm: computed('term', function() {
         var updatedTerm = this.get('term');
@@ -16,5 +17,7 @@ export default DS.Model.extend({
         updatedTerm = updatedTerm.replace(/ƴ/g, 'y');
 
         return updatedTerm;
-    })
+    }),
+
+    isHidden: '',
 });

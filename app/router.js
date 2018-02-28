@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('verbs');
+  this.route('add-term');
 });
 
 export default Router;

@@ -1,8 +1,11 @@
 <h1>Verbs</h1>
 <div class="well">
-    <div class="form-horizontal">
-        {{input class="input" type="text" placeholder="Search"}}
-        <button class="btn btn-primary">Add Term</button> 
+    <div class="form-inline term-header">
+        <div class="form-group">
+            {{input class="term-item form-control" type="text" placeholder="Search" value=searchTerm}}
+        </div>
+        {{#link-to 'add-term' class="btn btn-primary term-item"}}Add Term{{/link-to}}
+        {{!-- <button class="btn btn-primary term-item">Add Term</button>  --}}
     </div>
     <table class="table table-bordered table-striped">
         <thead>
@@ -13,9 +16,15 @@
         </thead>
         <tbody>
             {{#each sortedTerm as |verb|}}
-                <tr>
+                <tr class='{{verb.isHidden}}'>
                     <th>{{verb.term}}</th>
-                    <td>{{verb.definition}}</td>
+                    <td>
+                        {{verb.definition}}
+                        <span class="term-btn-wrapper">
+                            <a href="" class="btn btn-success btn-xs term-btn">Edit</a>
+                            <button class="btn btn-danger btn-xs term-btn" {{action 'deleteTerm' verb}} >Delete</button>
+                        </span>
+                    </td>
                 </tr>
             {{/each}}
         </tbody>
