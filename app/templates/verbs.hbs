@@ -10,8 +10,8 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th class="clickable" {{action 'changeSort' 'term'}}>Verb</th>
-                <th class="clickable" {{action 'changeSort' 'definition'}}>Definition</th>
+                <th class="clickable dropdown" {{action 'changeSort' 'term'}} id="termHeader">Verb <span class="{{termCaret}}"></span></th>
+                <th class="clickable" {{action 'changeSort' 'definition'}} id="definitionHeader">Definition <span class="{{definitionCaret}}"></span></th>
             </tr>
         </thead>
         <tbody>

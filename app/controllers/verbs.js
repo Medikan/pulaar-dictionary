@@ -7,13 +7,14 @@ export default Controller.extend({
     //TODO: add indicator to show current column sort thingy
     //TODO: FIGURE OUT CLEANER WAY TO SHOW VERBS!!! Draw is taking too much time
     //TODO: Throw loader on
-    //Add add/edit/delete button (CRUD interface FTW!)
     
     sortProps: ['searchableTerm:asc'],
 
     sortedTerm: sort('model', 'sortProps'),
 
     searchTerm: '',
+    termCaret: 'arrow-down',
+    definitionCaret: '',
 
     searchTermChanged: observer('searchTerm', function () {
         this.get('model').forEach((term) => {
@@ -34,17 +35,30 @@ export default Controller.extend({
             var updatedSortProps = this.get('sortProps');
 
             if (parent == 'term') {
+                
+                this.set('definitionCaret', '');
 
-                if (updatedSortProps.indexOf('searchableTerm:asc') >= 0)
+                if (updatedSortProps.indexOf('searchableTerm:asc') >= 0) {
                     updatedSortProps = ['searchableTerm:desc'];
-                else
+                    this.set('termCaret', 'arrow-up');
+                }
+                else {
                     updatedSortProps = ['searchableTerm:asc'];
+                    this.set('termCaret', 'arrow-down');
+                }
             }
             else {
-                if (updatedSortProps.indexOf('definition:asc') >= 0)
+
+                this.set('termCaret', '');
+
+                if (updatedSortProps.indexOf('definition:asc') >= 0) {
                     updatedSortProps = ['definition:desc'];
-                else
+                    this.set('definitionCaret', 'arrow-up');
+                }
+                else {
                     updatedSortProps = ['definition:asc'];
+                    this.set('definitionCaret', 'arrow-down');
+                }
             }
 
             this.set('sortProps', updatedSortProps);
