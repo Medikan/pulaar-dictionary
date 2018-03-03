@@ -21,7 +21,7 @@
                     <td>
                         {{verb.definition}}
                         <span class="term-btn-wrapper">
-                            <a href="" class="btn btn-success btn-xs term-btn">Edit</a>
+                            {{#link-to 'edit-term' verb.id class="btn btn-success btn-xs term-btn"}}Edit{{/link-to}}
                             <button class="btn btn-danger btn-xs term-btn" {{action 'deleteTerm' verb}} >Delete</button>
                         </span>
                     </td>

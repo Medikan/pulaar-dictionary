@@ -9,6 +9,8 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('verbs');
   this.route('add-term');
+  this.route('edit-term-template');
+  this.route('edit-term', { path: '/:verb_id/edit-term'});
 });
 
 export default Router;

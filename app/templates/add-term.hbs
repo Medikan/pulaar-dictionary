@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<div class="well">
+    <div class="add-term-wrapper form-horizontal form-group-lg row">
+        <div class="add-term-item">
+            {{input type="text" class="form-control" value=model.term placeholder="Enter the term" autofocus="autofocus"}}
+        </div>
+        <div class="add-term-item">
+            {{input type="text" class="form-control" value=model.definition placeholder="Enter the definition" autofocus="autofocus"}}
+        </div>
+        <div class="add-term-item">
+            <button class="btn btn-primary btn-lg btn-block" {{action 'addTerm' model}}>{{buttonLabel}}</button>
+        </div>
+    </div>
+    {{#if responseMessage}}
+    <div class="alert alert-success">
+        {{responseMessage}}
+    </div>
+    {{/if}}
+</div>
