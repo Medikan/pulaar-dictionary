@@ -4,7 +4,6 @@ import { observer } from '@ember/object';
 
 export default Controller.extend({
 
-    //TODO: add indicator to show current column sort thingy
     //TODO: FIGURE OUT CLEANER WAY TO SHOW VERBS!!! Draw is taking too much time
     //TODO: Throw loader on
     

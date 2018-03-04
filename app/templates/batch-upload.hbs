@@ -1,0 +1,14 @@
+<div class="well">
+    <div class="add-term-wrapper form-horizontal form-group-lg row">
+        <div class="add-term-item">
+            {{textarea class="form-control" rows=5 value=termBlob placeholder="Place [term, definition]'s here"}}  
+        </div>
+        <div class="add-term-item">
+            <button class="btn btn-primary btn-lg btn-block" {{action 'uploadAll' termBlob}}>Upload!</button>
+        </div>
+    </div>
+
+    <div class="alert alert-info">
+        <p>Insert instructions on how to properly batch upload terms here!</p>
+    </div>
+</div>

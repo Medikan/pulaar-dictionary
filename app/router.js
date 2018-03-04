@@ -11,6 +11,9 @@ Router.map(function() {
   this.route('add-term');
   this.route('edit-term-template');
   this.route('edit-term', { path: '/:verb_id/edit-term'});
+  this.route('batch-upload');
+  this.route('nouns');
+  this.route('term-template');
 });
 
 export default Router;
