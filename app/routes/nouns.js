@@ -7,11 +7,13 @@ export default TermTemplate.extend({
     },
 
     templateName: 'term-template',
-    controllerName: 'verbs',
+    controllerName: 'verbs', //TODO make controller abstract
     
     setupController(controller, model) {
         this._super(controller, model);
 
         controller.set('pageHeader', 'Nouns');
+        controller.set('addTerm', 'add-noun');
+        controller.set('editTerm', 'edit-noun');
     }
 });

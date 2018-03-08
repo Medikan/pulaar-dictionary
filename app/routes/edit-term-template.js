@@ -2,6 +2,8 @@ import Route from '@ember/routing/route';
 
 const editTermTemplate =  Route.extend({
 
+    templateName: "edit-term-template",
+
     actions: {
 
         addTerm(newTerm){

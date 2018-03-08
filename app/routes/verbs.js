@@ -12,5 +12,7 @@ export default TermTemplate.extend({
         this._super(controller, model);
 
         controller.set('pageHeader', 'Verbs');
+        controller.set('addTerm', 'add-verb');
+        controller.set('editTerm', 'edit-verb');
     }
 });

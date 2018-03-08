@@ -5,7 +5,7 @@
             {{input class="term-item form-control" type="text" placeholder="Search" value=searchTerm}}
         </div>
         <div class="form-group">
-            {{#link-to 'add-term' class="btn btn-primary term-item"}}Add Term{{/link-to}}
+            {{#link-to addTerm class="btn btn-primary term-item"}}Add Term{{/link-to}}
         </div>
     </div>
     There are currently <b>{{numberOfTerms}}</b> terms
@@ -23,7 +23,7 @@
                     <td>
                         {{term.definition}}
                         <span class="term-btn-wrapper">
-                            {{#link-to 'edit-term' term.id class="btn btn-success btn-xs term-btn"}}Edit{{/link-to}}
+                            {{#link-to editTerm term.id class="btn btn-success btn-xs term-btn"}}Edit{{/link-to}}
                             <button class="btn btn-danger btn-xs term-btn" {{action 'deleteTerm' term}} >Delete</button>
                         </span>
                     </td>

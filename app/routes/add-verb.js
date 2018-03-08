@@ -2,18 +2,17 @@ import editTermTemplate from 'pulaar-dictionary-project/routes/edit-term-templat
 
 export default editTermTemplate.extend({
 
-    model(params) {
-        return this.store.findRecord('verb', params.verb_id);
+    model() {
+        return this.store.createRecord('verb');
     },
 
     setupController(controller, model) {
         this._super(controller, model);
     
-        controller.set('title', 'Edit a Term');
-        controller.set('buttonLabel', 'Update');
+        controller.set('title', 'Add a Term');
+        controller.set('buttonLabel', 'Add to List');
         controller.set('responseMessage', '');
     },
 
-    templateName: "add-term",
-
+    templateName: "edit-term-template",
 });
