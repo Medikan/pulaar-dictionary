@@ -17,7 +17,9 @@ export default Controller.extend({
 
     searchTermChanged: observer('searchTerm', function () {
         this.get('model').forEach((term) => {
-            if (term.get('searchableTerm').indexOf(this.searchTerm) >= 0 || term.get('definition').indexOf(this.searchTerm) >= 0) {
+
+            var searchTerm = this.searchTerm.toLowerCase();
+            if (term.get('searchableTerm').indexOf(searchTerm) >= 0 || term.get('definition').indexOf(searchTerm) >= 0) {
                 term.set('isHidden', '');
             }
             else {

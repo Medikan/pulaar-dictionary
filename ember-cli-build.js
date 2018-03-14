@@ -11,11 +11,7 @@ module.exports = function(defaults) {
     },
     'esw-cache-fallback': {
       patterns: [ '/' ],
-      version: '1' // Changing the version will bust the cache
-    },
-
-    'ember-cli-bootstrap-sassy': {
-      'js': false
+      version: '1.01' // Changing the version will bust the cache
     }
   });
 
