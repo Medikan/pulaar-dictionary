@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('edit-verb', { path: '/:verb_id/edit-verb'});
   this.route('add-noun');
   this.route('edit-noun', { path: '/:verb_id/edit-noun'});
+  this.route('loading');
 });
 
 export default Router;
